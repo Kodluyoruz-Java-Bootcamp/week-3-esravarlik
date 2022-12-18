@@ -75,7 +75,6 @@ Response: 200 OK.
 ]
 ````
 
----
 **3. FeignClient kütüphanesiyle gerçekleştirdiğimiz emlakcepte-banner-service senkron
 iletişimi aynı zamanda Spring RestTemplate ile de gerçekleştirin.**
 ---
@@ -102,7 +101,7 @@ Dezavantaj;
 
 Uygulamaya çok fazla istek gelmeye başladığı bir senaryo düşünelim. Artık database sorgulara yetişememeye başlar.
 Load Balancer: Client üzerinden gelen istekleri duruma göre sunucular arasında paylaştırmayı sağlar.
-
+![](micromono.png)
 
 **Mikro Services Architecture**  
 SOA'nın bir yorumudur. Bu yüzden SOA'nın avantaj ve dezavantajlarınıda inceleyelim.  
