@@ -1,10 +1,10 @@
-package com.emlakcepte;
+package com.jojo.mediumproject;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class EmlakcepteServiceApplicationTests {
+class MediumprojectApplicationTests {
 
     @Test
     void contextLoads() {
