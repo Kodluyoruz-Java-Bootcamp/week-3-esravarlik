@@ -10,6 +10,10 @@ public class Banner {
 
     private String telNo2;
 
+    public Banner(){
+
+    }
+
 
     public Banner(String ilanNo, int adet, String telNo1, String telNo2) {
         super();

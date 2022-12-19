@@ -1,7 +1,8 @@
 package emlakcepte.service;
 
 import emlakcepte.client.Banner;
-import emlakcepte.client.BannerServiceClient;
+import emlakcepte.client.BannerClient;
+import emlakcepte.client.BannerService;
 import emlakcepte.model.Realty;
 import emlakcepte.model.User;
 import emlakcepte.model.enums.HousingType;
@@ -9,6 +10,7 @@ import emlakcepte.model.enums.RealtyType;
 import emlakcepte.model.enums.UserType;
 import emlakcepte.repository.RealtyRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -21,7 +23,7 @@ public class RealtyService {
     private RealtyRepository realtyDao;
 
     @Autowired
-    private BannerServiceClient bannerServiceClient;
+    private BannerService bannerService;
 
     public void create(Realty realty) {
 
@@ -36,11 +38,7 @@ public class RealtyService {
 
         Banner bannerRequest = new Banner(String.valueOf(realty.getNo()), 1, "123123", "");
 
-        Banner bannerResponse = bannerServiceClient.create(bannerRequest);
-
-        if (bannerResponse.getAdet() > 1) {
-            System.out.println("Error! ");
-        }
+        ResponseEntity<Banner> bannerResponse = bannerService.create(bannerRequest);
     }
 
     public List<Realty> getAll() {
